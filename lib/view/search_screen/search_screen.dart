@@ -2,6 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:pinterest_clone/dummy_db.dart';
 import 'package:pinterest_clone/utilis/color_constants.dart';
+import 'package:pinterest_clone/view/global_widgets/gridImage.dart';
+import 'package:pinterest_clone/view/home_screen/detailed_imageCard/detailed_imageCard.dart';
+import 'package:pinterest_clone/view/home_screen/home_screen.dart';
+import 'package:pinterest_clone/view/search_screen/search_details/search_details.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -13,7 +17,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   int activeindex = 0;
-
+  double itemWidth = 220;
   final List<String> texts = [
     "make it pretty\nDo up your tray like this",
     "All your vibe\nPick your on vibe",
@@ -114,33 +118,42 @@ class _SearchScreenState extends State<SearchScreen> {
               crossAxisSpacing: 6,
               mainAxisSpacing: 6,
               mainAxisExtent: 100),
-          itemBuilder: (context, index) => Container(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Stack(children: [
-                Image.network(
-                  DummyDb.urlImages[index]["url"],
-                  fit: BoxFit.cover,
-                  height: double.infinity,
-                  width: double.infinity,
-                ),
-                Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Colors.black.withOpacity(.5),
-                    Colors.black.withOpacity(.5)
-                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
-                ),
-                Center(
-                  child: Text(
-                    DummyDb.urlImages[index]["text"],
-                    style: TextStyle(
-                        color: ColorConstants.mainWhite,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+          itemBuilder: (context, index) => InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SearchDetails()));
+            },
+            child: Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Stack(children: [
+                  Image.network(
+                    DummyDb.urlImages[index]["url"],
+                    fit: BoxFit.cover,
+                    height: double.infinity,
+                    width: double.infinity,
                   ),
-                )
-              ]),
+                  Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                          Colors.black.withOpacity(.5),
+                          Colors.black.withOpacity(.5)
+                        ],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter)),
+                  ),
+                  Center(
+                    child: Text(
+                      DummyDb.urlImages[index]["text"],
+                      style: TextStyle(
+                          color: ColorConstants.mainWhite,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                  )
+                ]),
+              ),
             ),
           ),
         ),

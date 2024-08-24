@@ -251,4 +251,49 @@ class DummyDb {
       "text": "Travel"
     },
   ];
+
+  static List pinTabImages = [
+    {
+      "url":
+          "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Be unique in your way",
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/1854652/pexels-photo-1854652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "cakes"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/3838285/pexels-photo-3838285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": ""
+    }
+  ];
+
+  static List settingsList = [
+    {
+      "text": "Account management",
+    },
+    {
+      "text": "Profile visibility",
+    },
+    {
+      "text": "Home feed tuner",
+    },
+    {"text": "Claimed accounts"},
+    {"text": "Social permission and activity"},
+    {"text": "Notifications"},
+    {"text": "Privacy and data"},
+    {"text": "Reports and violations centre"}
+  ];
+  static List loginList = [
+    {"text": "Add account"},
+    {"text": "Security"},
+    {"text": "Log out"}
+  ];
+  static List supportList = [
+    {"text": "Help centre"},
+    {"text": "Terms of Service"},
+    {"text": "Privacy Policy"}
+  ];
 }

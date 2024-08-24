@@ -127,9 +127,7 @@ class _DetailedImageCardState extends State<DetailedImageCard> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 90,
-                    ),
+                    Spacer(),
                     Icon(
                       Icons.upload,
                       color: ColorConstants.mainWhite,
