@@ -14,15 +14,6 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   int activeindex = 0;
 
-  final urlImages = [
-    "https://images.pexels.com/photos/2379179/pexels-photo-2379179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1161372/pexels-photo-1161372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/2189700/pexels-photo-2189700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  ];
-
   final List<String> texts = [
     "make it pretty\nDo up your tray like this",
     "All your vibe\nPick your on vibe",
@@ -48,7 +39,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                   AnimatedSmoothIndicator(
                     activeIndex: activeindex,
-                    count: urlImages.length,
+                    count: DummyDb.urlImages.length,
                     effect: SwapEffect(
                         dotWidth: 10,
                         dotHeight: 10,
@@ -99,7 +90,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
                   //#4 last 6 grid
 
-                  _popularOnPinterestSection()
+                  _popularOnPinterestSection(),
                 ],
               ),
             ),
@@ -111,13 +102,13 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Padding _popularOnPinterestSection() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 6),
+      padding: const EdgeInsets.only(left: 5, right: 5),
       child: Container(
         height: 318,
         child: GridView.builder(
           shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
-          itemCount: urlImages.length,
+          itemCount: DummyDb.urlImages.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 6,
@@ -126,10 +117,30 @@ class _SearchScreenState extends State<SearchScreen> {
           itemBuilder: (context, index) => Container(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.network(
-                urlImages[index].toString(),
-                fit: BoxFit.cover,
-              ),
+              child: Stack(children: [
+                Image.network(
+                  DummyDb.urlImages[index]["url"],
+                  fit: BoxFit.cover,
+                  height: double.infinity,
+                  width: double.infinity,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(colors: [
+                    Colors.black.withOpacity(.5),
+                    Colors.black.withOpacity(.5)
+                  ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
+                ),
+                Center(
+                  child: Text(
+                    DummyDb.urlImages[index]["text"],
+                    style: TextStyle(
+                        color: ColorConstants.mainWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                )
+              ]),
             ),
           ),
         ),
@@ -154,9 +165,9 @@ class _SearchScreenState extends State<SearchScreen> {
               });
             },
           ),
-          itemCount: urlImages.length,
+          itemCount: DummyDb.urlImages.length,
           itemBuilder: (context, index, realIndex) {
-            final urlImage = urlImages[index];
+            final urlImage = DummyDb.urlImages[index]["url"];
 
             return Stack(
               children: [
@@ -316,8 +327,8 @@ class _ideasFromCreatorSection extends StatelessWidget {
                 bottom: 0,
                 right: 25,
                 child: CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"),
+                  backgroundImage:
+                      NetworkImage(DummyDb.threeContainer[index]["round"]),
                   radius: 23,
                 ),
               )

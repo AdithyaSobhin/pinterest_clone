@@ -201,29 +201,54 @@ class DummyDb {
   static List threeContainer = [
     {
       "container":
-          "https://images.pexels.com/photos/2253821/pexels-photo-2253821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://images.pexels.com/photos/12575709/pexels-photo-12575709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "round":
-          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          "https://images.pexels.com/photos/27255535/pexels-photo-27255535/free-photo-of-woman-in-white-dress-standing-in-flowers.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "container":
-          "https://images.pexels.com/photos/2253821/pexels-photo-2253821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://images.pexels.com/photos/7147472/pexels-photo-7147472.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "round":
-          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          "https://images.pexels.com/photos/27650418/pexels-photo-27650418/free-photo-of-a-woman-taking-a-picture-of-herself-with-a-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     },
     {
       "container":
-          "https://images.pexels.com/photos/2253821/pexels-photo-2253821.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://images.pexels.com/photos/6925162/pexels-photo-6925162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "round":
-          "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          "https://images.pexels.com/photos/27640372/pexels-photo-27640372/free-photo-of-woman-in-suit-standing-in-greenhouse.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }
   ];
-  static List texts = [
-    {"greytext": "make it pretty", "text": "Do up your tray like this"},
-    {"greytext": "All your vibe", "text": "Pick your on vibe"},
-    {"greytext": "sweet cakes", "text": "pick your favourite flavour"},
-    {"greytext": "get creative", "text": "The coolest photo doodles"},
-    {"greytext": "Drawings", "text": "visualize the drawings"},
-    {"greytext": "Motivating words", "text": "back to quotes and wallpapers"},
+
+  static List urlImages = [
+    {
+      "url":
+          "https://images.pexels.com/photos/2379179/pexels-photo-2379179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Travel"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/1161372/pexels-photo-1161372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Love"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/1721932/pexels-photo-1721932.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Sweet cakes"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Forest"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Cakes"
+    },
+    {
+      "url":
+          "https://images.pexels.com/photos/2189700/pexels-photo-2189700.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "text": "Travel"
+    },
   ];
 }

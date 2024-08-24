@@ -13,12 +13,36 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passController = TextEditingController();
+  final _formkey = GlobalKey<FormState>();
+  bool _isFormValid = false;
+
+  void _validateForm() {
+    setState(() {
+      _isFormValid =
+          emailController.text.contains("@") && passController.text.length >= 6;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    emailController.addListener(_validateForm);
+    passController.addListener(_validateForm);
+  }
+
+  @override
+  void dispose() {
+    emailController.removeListener(_validateForm);
+    passController.removeListener(_validateForm);
+    emailController.dispose();
+    passController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passController = TextEditingController();
-    final _formkey = GlobalKey<FormState>();
-
     return Scaffold(
       backgroundColor: ColorConstants.mainBlack,
       appBar: AppBar(
@@ -54,7 +78,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(color: ColorConstants.mainWhite),
               ),
 
-              //email imput field
+              //email input field
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -151,13 +176,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 35,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade900,
+                        color: _isFormValid
+                            ? ColorConstants.mainRed
+                            : Colors.grey.shade900,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Text(
                         "Log in",
                         style: TextStyle(
-                          color: ColorConstants.mainRed,
+                          color: ColorConstants.mainWhite,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),

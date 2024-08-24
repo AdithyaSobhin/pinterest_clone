@@ -4,6 +4,7 @@ import 'package:icons_plus/icons_plus.dart';
 import 'package:pinterest_clone/utilis/color_constants.dart';
 import 'package:pinterest_clone/view/home_screen/home_screen.dart';
 import 'package:pinterest_clone/view/notification_screen/notification_screen.dart';
+import 'package:pinterest_clone/view/profile_screen/profile_screen.dart';
 import 'package:pinterest_clone/view/search_screen/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -19,9 +20,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     SearchScreen(),
     Container(),
     NotificationScreen(),
-    Container(
-      color: Colors.black,
-    )
+    ProfileScreen()
   ];
   int selectedTab = 0;
 
