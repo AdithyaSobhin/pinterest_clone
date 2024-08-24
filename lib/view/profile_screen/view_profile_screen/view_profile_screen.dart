@@ -19,10 +19,15 @@ class _ViewProfileScreenState extends State<ViewProfileScreen> {
       child: Scaffold(
           appBar: AppBar(
             backgroundColor: ColorConstants.mainBlack,
-            leading: Icon(
-              Icons.keyboard_arrow_left,
-              color: ColorConstants.mainWhite,
-              size: 30,
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.keyboard_arrow_left,
+                color: ColorConstants.mainWhite,
+                size: 30,
+              ),
             ),
             actions: [
               Icon(

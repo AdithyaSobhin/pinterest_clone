@@ -12,9 +12,14 @@ class DetailedProfileScreen extends StatelessWidget {
       backgroundColor: ColorConstants.mainBlack,
       appBar: AppBar(
         backgroundColor: ColorConstants.mainBlack,
-        leading: Icon(
-          Icons.arrow_back,
-          color: ColorConstants.mainWhite,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back,
+            color: ColorConstants.mainWhite,
+          ),
         ),
         centerTitle: true,
         title: Text(
