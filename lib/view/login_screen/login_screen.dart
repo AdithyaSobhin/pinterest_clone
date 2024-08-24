@@ -23,9 +23,14 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: ColorConstants.mainBlack,
       appBar: AppBar(
         backgroundColor: ColorConstants.mainBlack,
-        leading: Icon(
-          Icons.close,
-          color: ColorConstants.mainWhite,
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.close,
+            color: ColorConstants.mainWhite,
+          ),
         ),
         title: Text(
           "Log in",
@@ -152,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: Text(
                         "Log in",
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: ColorConstants.mainRed,
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
                         ),

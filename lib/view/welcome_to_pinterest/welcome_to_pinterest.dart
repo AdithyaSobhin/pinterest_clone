@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 
 import 'package:pinterest_clone/utilis/color_constants.dart';
 import 'package:pinterest_clone/utilis/image_constants.dart';
@@ -15,7 +16,7 @@ class WelcomeToPinterest extends StatelessWidget {
         children: [
           Stack(children: [
             Container(
-              height: 400,
+              height: 550,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -25,7 +26,7 @@ class WelcomeToPinterest extends StatelessWidget {
               ),
             ),
             Container(
-              height: 400,
+              height: 550,
               decoration: BoxDecoration(
                   gradient: LinearGradient(
                 begin: Alignment.bottomCenter,
@@ -39,15 +40,15 @@ class WelcomeToPinterest extends StatelessWidget {
           ]),
           Expanded(
             child: Container(
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                padding: EdgeInsets.symmetric(vertical: 5, horizontal: 25),
                 width: double.infinity,
                 color: ColorConstants.mainBlack,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Image.asset(
-                      ImageConstants.LOGO,
-                      height: 80,
-                      width: 80,
+                    Brand(
+                      Brands.pinterest,
+                      size: 100,
                     ),
                     SizedBox(
                       height: 10,

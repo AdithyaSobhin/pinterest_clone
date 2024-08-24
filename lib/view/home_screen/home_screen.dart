@@ -32,9 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ]),
               Expanded(
-                child: TabBarView(
-                  children: [GridImage(itemWidth: itemWidth)],
-                ),
+                child: TabBarView(children: [
+                  SingleChildScrollView(
+                    child: Center(
+                      child: GridImage(itemWidth: itemWidth),
+                    ),
+                  ),
+                ]),
               ),
             ],
           ),

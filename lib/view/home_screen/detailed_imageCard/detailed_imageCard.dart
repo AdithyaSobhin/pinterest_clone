@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pinterest_clone/dummy_db.dart';
 import 'package:pinterest_clone/utilis/color_constants.dart';
 import 'package:pinterest_clone/view/global_widgets/gridImage.dart';
 
@@ -23,7 +23,7 @@ class _DetailedImageCardState extends State<DetailedImageCard> {
     final double itemWidth = 220;
     return Scaffold(
       backgroundColor: ColorConstants.mainBlack,
-      body: Expanded(
+      body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Container(
             width: double.infinity,
@@ -52,15 +52,13 @@ class _DetailedImageCardState extends State<DetailedImageCard> {
                       width: 10,
                     ),
                     Text(
-                      "Cake Canvas Creations",
+                      "Elisa",
                       style: TextStyle(
                           color: ColorConstants.mainWhite,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
                     ),
-                    SizedBox(
-                      width: 30,
-                    ),
+                    Spacer(),
                     Container(
                       height: 45,
                       width: 70,
@@ -146,16 +144,13 @@ class _DetailedImageCardState extends State<DetailedImageCard> {
             color: ColorConstants.lightGray.withOpacity(.5),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Text(
-                  "More to explore",
-                  style: TextStyle(color: ColorConstants.mainWhite),
-                ),
-              ],
+            padding: const EdgeInsets.only(top: 10, left: 10),
+            child: Text(
+              "More to explore",
+              style: TextStyle(color: ColorConstants.mainWhite),
             ),
-          )
+          ),
+          GridImage(itemWidth: itemWidth)
         ]),
       ),
     );
